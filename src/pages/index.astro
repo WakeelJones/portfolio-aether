@@ -1,0 +1,801 @@
+---
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Wakeel Jones | Software Engineer & Digital Creator</title>
+    <meta name="description" content="Wakeel Jones is a software engineer and digital creator specializing in modern, visually stunning, and user-focused web experiences. Explore projects, design philosophy, and ways to connect." />
+    <meta name="keywords" content="Wakeel Jones, software engineer, web developer, portfolio, UI/UX, digital creator, React, JavaScript, design, projects, South Africa" />
+    <meta name="author" content="Wakeel Jones" />
+    <link rel="canonical" href="https://wakeeljones.com/" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wakeeljones.com/" />
+    <meta property="og:title" content="Wakeel Jones | Software Engineer & Digital Creator" />
+    <meta property="og:description" content="Wakeel Jones is a software engineer and digital creator specializing in modern, visually stunning, and user-focused web experiences. Explore projects, design philosophy, and ways to connect." />
+    <meta property="og:image" content="https://wakeeljones.com/assets/Landing-image-removebg-preview.png" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://wakeeljones.com/" />
+    <meta name="twitter:title" content="Wakeel Jones | Software Engineer & Digital Creator" />
+    <meta name="twitter:description" content="Wakeel Jones is a software engineer and digital creator specializing in modern, visually stunning, and user-focused web experiences. Explore projects, design philosophy, and ways to connect." />
+    <meta name="twitter:image" content="https://wakeeljones.com/assets/Landing-image-removebg-preview.png" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/splash.css" />
+    <style>
+      @keyframes wjDraw {
+        to { stroke-dashoffset: 0; }
+      }
+      .scroll-animate {
+        display: inline-block;
+        background: linear-gradient(90deg, #7f53ac, #647dee, #00bfae, #c6ff00);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: scrollTextAnim 2.5s linear infinite alternate;
+      }
+      @keyframes scrollTextAnim {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+      .site-scrollbar-progress {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 6px;
+        height: 100vh;
+        background: rgba(127,83,172,0.08);
+        z-index: 9999;
+        border-radius: 3px;
+      }
+      .site-scrollbar-progress-inner {
+        width: 100%;
+        background: linear-gradient(180deg,#7f53ac,#647dee,#00bfae,#c6ff00);
+        border-radius: 3px;
+        transition: height 0.2s cubic-bezier(.77,0,.18,1);
+      }
+      html, body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .main-footer {
+        margin-top: auto;
+      }
+      @media (max-width: 700px) {
+        .section,
+        .contact-section,
+        .contact-content,
+        .main-footer,
+        .quote-banner,
+        .projects-section {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+          box-sizing: border-box;
+        }
+        .contact-form {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          grid-template-columns: 1fr !important;
+          grid-template-rows: auto auto auto !important;
+        }
+        .contact-form > div,
+        .contact-form textarea,
+        .contact-form input {
+          width: 100% !important;
+          margin-right: 0 !important;
+        }
+        .project-window img,
+        .project-image {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          left: 0 !important;
+        }
+        .scroll-instruction,
+        .social-media-row {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+        .site-scrollbar-progress {
+          display: none;
+        }
+      }
+      /* Project slide animation styles */
+      .project-slide-container {
+        transition: transform 0.6s cubic-bezier(.77,0,.18,1), opacity 0.6s cubic-bezier(.77,0,.18,1);
+        will-change: transform, opacity;
+      }
+      .slide-up {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      .slide-down {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      .slide-reset {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Browser check: Only allow Chrome -->
+    <script>
+      if (typeof window !== 'undefined') {
+        var isChrome = /Chrome\//.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (!isChrome) {
+          var overlay = document.createElement('div');
+          overlay.style.position = 'fixed';
+          overlay.style.top = '0';
+          overlay.style.left = '0';
+          overlay.style.width = '100vw';
+          overlay.style.height = '100vh';
+          overlay.style.background = 'rgba(20,20,30,0.98)';
+          overlay.style.zIndex = '100000';
+          overlay.style.display = 'flex';
+          overlay.style.flexDirection = 'column';
+          overlay.style.alignItems = 'center';
+          overlay.style.justifyContent = 'center';
+          overlay.style.color = '#fff';
+          overlay.style.fontSize = '2rem';
+          overlay.style.fontFamily = 'Inter, Segoe UI, Arial, sans-serif';
+          overlay.innerHTML = '<div style="text-align:center;"><b>This site only works in Google Chrome.</b><br/><br/>Please open this page in Chrome for the best experience.</div>';
+          document.body.appendChild(overlay);
+          document.body.style.overflow = 'hidden';
+        }
+      }
+    </script>
+    <div class="site-scrollbar-progress"><div class="site-scrollbar-progress-inner"></div></div>
+    <div class="bg-gradient"></div>
+    <div class="bg-blobs"></div>
+    <div class="bg-particles"></div>
+    <section id="home" class="section hero-section" style="position:relative;overflow:hidden;">
+      <nav class="main-nav">
+        <div class="main-nav-inner">
+          <a href="#home" class="nav-logo">WJ</a>
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-dropdown">
+            <span class="hamburger-bars">
+              <span class="hamburger-bar"></span>
+              <span class="hamburger-bar"></span>
+              <span class="hamburger-bar"></span>
+            </span>
+            <span class="nav-hamburger-label">Menu</span>
+          </button>
+          <div class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+            <a href="#" class="nav-dropdown-logo">WJ</a>
+            <button class="nav-close" id="nav-close" aria-label="Close menu">
+              <span class="nav-close-inner">
+                <i class="ri-close-line"><span class="nav-close-label">Close Menu</span></i>
+              </span>
+            </button>
+            <div class="nav-dropdown-links">
+              <a href="#about">About</a>
+              <a href="#projects">Projects</a>
+            </div>
+          </div>
+          <a href="#contact" class="nav-contact">Reach Out</a>
+        </div>
+      </nav>
+      <div class="hero-gradient-spot"></div>
+      <div class="hero-content">
+        <h1 class="hero-headline">Wakeel Jones</h1>
+        <h2 class="hero-sub">Software Engineer & Digital Creator</h2>
+        <p class="hero-tag">Designing Tomorrow, Today.</p>
+      </div>
+      <a href="#about" class="hero-cta-scroll">
+        <span class="hero-cta-text">Let us get to know each other</span>
+        <i class="ri-arrow-down-double-line hero-cta-icon"></i>
+      </a>
+    </section>
+    <section id="about" class="section about-section">
+      <div class="about-what-to-know">What to know</div>
+      <div class="about-content about-split">
+      <div class="about-left">
+          <p>Wakeel is a front-end engineer with experience in Python, JavaScript, Node JS, MySQL, MongoDB, and React. His dream is to one day start his own business and become an entrepreneur (he is currently working on some ideas). He is constantly learning new things, including gaining more experience with MongoDB, React, Node JS, and Generative AI. His latest project, AcSummarizer, is a platform built with GPT-4 that can be used to summarize articles, essays, and much more. You can check it out in the Projects section. It is built with React, MongoDB, and Node JS.</p>
+        </div>
+        <div class="about-right">
+          <img src="/assets/Landing-image-removebg-preview.png" alt="Wakeel Jones profile" style="width: 80vw; height: 60vh; margin-left:2px; object-fit: contain; border-radius: 1.2rem; box-shadow: 0 4px 24px 0 rgba(26,35,126,0.13);" />
+        </div>
+      </div>
+      <div class="about-floating-label">About Me</div>
+    </section>
+    <div class="quote-banner" style="width:100vw;max-width:100vw;position:relative;left:0;right:0;margin:0 auto;background:#fff;height:100vh;min-height:400px;padding:0;text-align:center;box-shadow:0 2px 24px 0 rgba(26,35,126,0.07);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <blockquote>“Building digital experiences that inspire, empower, and connect.”<br><span>- Wakeel Jones</span></blockquote>
+    </div>
+    <script>
+      if (typeof window !== 'undefined') {
+        const quotes = [
+          { text: '"Any sufficiently advanced technology is indistinguishable from magic."', author: '- Arthur C. Clarke' },
+          { text: '"Programs must be written for people to read, and only incidentally for machines to execute."', author: '- Harold Abelson' },
+          { text: '"The best way to predict the future is to invent it."', author: '- Alan Kay' }
+        ];
+        let quoteIndex = 0;
+        const quoteText = document.getElementById('quote-text');
+        const quoteDots = document.getElementById('quote-dots');
+        function updateQuote() {
+          if (quoteText && quoteDots) {
+            quoteText.innerHTML = `${quotes[quoteIndex].text}<br><span>${quotes[quoteIndex].author}</span>`;
+            // Update dots
+            quoteDots.innerHTML = '';
+            quotes.forEach((_, i) => {
+              const dot = document.createElement('button');
+              dot.className = 'quote-dot' + (i === quoteIndex ? ' active' : '');
+              dot.setAttribute('aria-label', `Show quote ${i + 1}`);
+              dot.addEventListener('click', () => {
+                quoteIndex = i;
+                updateQuote();
+                stopAutoScroll();
+                startAutoScroll();
+              });
+              quoteDots.appendChild(dot);
+            });
+          }
+        }
+        let autoScrollInterval: number | undefined;
+        function startAutoScroll() {
+          autoScrollInterval = window.setInterval(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            updateQuote();
+          }, 5000);
+        }
+        function stopAutoScroll() {
+          if (autoScrollInterval) window.clearInterval(autoScrollInterval);
+        }
+        const banner = document.querySelector('.quote-banner');
+        if (banner && quoteText && quoteDots) {
+          banner.addEventListener('mouseenter', stopAutoScroll);
+          banner.addEventListener('mouseleave', startAutoScroll);
+          updateQuote();
+          startAutoScroll();
+        }
+      }
+    </script>
+    <section class="know-what-section">
+      <div class="know-what-floating know-what-top-left">Know what</div>
+      <div class="know-what-content">
+        <div class="know-what-block know-what-row horizontal">
+          <div class="know-what-text">
+            <h3>Product Discovery</h3>
+            <p>Every great product starts with understanding. In this phase, I work closely with you to transform your ideas into a focused and actionable plan. Through collaborative sessions and strategic research, I uncover key insights, identify opportunities, and align around a shared vision. My goal is to build clarity, momentum, and a strong foundation for everything that follows.</p>
+          </div>
+          <div class="know-what-svg">
+            <svg width="140" height="140" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Shopping bag body -->
+              <rect x="25" y="35" width="40" height="38" rx="8" fill="url(#bagGrad)" stroke="#1a237e" stroke-width="2"/>
+              <!-- Bag handles -->
+              <path d="M35 35 Q35 25 45 25 Q55 25 55 35" stroke="#1a237e" stroke-width="2" fill="none"/>
+              <!-- Magnifying glass handle -->
+              <rect x="62" y="62" width="14" height="4" rx="2" fill="url(#handleGrad)" transform="rotate(45 62 62)"/>
+              <!-- Magnifying glass circle -->
+              <circle cx="60" cy="60" r="10" stroke="url(#glassGrad)" stroke-width="4" fill="none"/>
+              <!-- Bag shadow for depth -->
+              <ellipse cx="45" cy="77" rx="16" ry="4" fill="#1a237e" opacity="0.10"/>
+              <defs>
+                <linearGradient id="bagGrad" x1="25" y1="35" x2="65" y2="73" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00b8ff"/>
+                  <stop offset="1" stop-color="#c6ff00"/>
+                </linearGradient>
+                <linearGradient id="handleGrad" x1="62" y1="62" x2="76" y2="66" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#1a237e"/>
+                  <stop offset="1" stop-color="#00bfae"/>
+                </linearGradient>
+                <linearGradient id="glassGrad" x1="50" y1="50" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00b8ff"/>
+                  <stop offset="1" stop-color="#1a237e"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="know-what-block know-what-row horizontal reverse">
+          <div class="know-what-svg">
+            <svg width="140" height="140" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Wireframe window -->
+              <rect x="18" y="22" width="54" height="38" rx="7" fill="url(#windowGrad)" stroke="#1a237e" stroke-width="2"/>
+              <!-- Window header -->
+              <rect x="18" y="22" width="54" height="10" rx="3" fill="#1a237e" opacity="0.13"/>
+              <!-- Window lines (wireframe) -->
+              <rect x="26" y="36" width="38" height="4" rx="2" fill="#00b8ff" opacity="0.7"/>
+              <rect x="26" y="44" width="24" height="4" rx="2" fill="#00bfae" opacity="0.7"/>
+              <rect x="26" y="52" width="30" height="4" rx="2" fill="#c6ff00" opacity="0.7"/>
+              <!-- Pencil body -->
+              <rect x="60" y="60" width="18" height="6" rx="3" fill="url(#pencilGrad)" transform="rotate(-30 60 60)"/>
+              <!-- Pencil tip -->
+              <polygon points="77,63 81,65 78,69 74,67" fill="#fbc02d"/>
+              <!-- Color palette circle -->
+              <circle cx="30" cy="70" r="8" fill="url(#paletteGrad)" stroke="#1a237e" stroke-width="2"/>
+              <!-- Palette dots -->
+              <circle cx="27" cy="70" r="1.5" fill="#00b8ff"/>
+              <circle cx="30" cy="67" r="1.5" fill="#00bfae"/>
+              <circle cx="33" cy="72" r="1.5" fill="#c6ff00"/>
+              <defs>
+                <linearGradient id="windowGrad" x1="18" y1="22" x2="72" y2="60" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#fff"/>
+                  <stop offset="1" stop-color="#e3e6ee"/>
+                </linearGradient>
+                <linearGradient id="pencilGrad" x1="60" y1="60" x2="78" y2="66" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#1a237e"/>
+                  <stop offset="1" stop-color="#00bfae"/>
+                </linearGradient>
+                <linearGradient id="paletteGrad" x1="22" y1="62" x2="38" y2="78" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00b8ff"/>
+                  <stop offset="1" stop-color="#c6ff00"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="know-what-text">
+            <h3>Product Design (UX/UI Process)</h3>
+            <p>For me, product design is more than aesthetics — it’s about purpose, clarity, and connection. I create clean, beautiful interfaces that reflect your vision and elevate your brand. Every screen is thoughtfully crafted to guide users effortlessly, blending form and function for a seamless experience. I’m ready to bring your story to life with precision and care.</p>
+          </div>
+        </div>
+        <div class="know-what-block know-what-row horizontal">
+          <div class="know-what-text">
+            <h3>Product Delivery & Documentation</h3>
+            <p>This is where the vision becomes reality — one of the most exciting stages in the process. I unveil the finished product, ready for you to explore and use with confidence. You’ll receive a smooth, hassle-free handoff complete with a live demo, clear documentation, and everything you need to hit the ground running. I ensure every detail works as it should — no surprises, just results.</p>
+          </div>
+          <div class="know-what-svg">
+            <svg width="140" height="140" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Open box base -->
+              <rect x="20" y="55" width="50" height="20" rx="6" fill="url(#boxGrad)" stroke="#1a237e" stroke-width="2"/>
+              <!-- Box flaps -->
+              <polygon points="20,55 45,40 70,55 45,70" fill="url(#flapGrad)" stroke="#1a237e" stroke-width="2"/>
+              <!-- Rocket body -->
+              <rect x="41" y="25" width="8" height="22" rx="4" fill="url(#rocketGrad)" stroke="#1a237e" stroke-width="1.5"/>
+              <!-- Rocket window -->
+              <circle cx="45" cy="33" r="2.5" fill="#fff" stroke="#1a237e" stroke-width="1"/>
+              <!-- Rocket fins -->
+              <polygon points="41,47 39,52 45,49" fill="#c6ff00" stroke="#1a237e" stroke-width="1"/>
+              <polygon points="49,47 51,52 45,49" fill="#00b8ff" stroke="#1a237e" stroke-width="1"/>
+              <!-- Rocket flame -->
+              <polygon points="44,47 45,55 46,47" fill="url(#flameGrad)"/>
+              <!-- Sparkles -->
+              <circle cx="30" cy="30" r="1.5" fill="#c6ff00"/>
+              <circle cx="60" cy="20" r="1.2" fill="#00b8ff"/>
+              <circle cx="55" cy="35" r="1" fill="#fff"/>
+              <!-- Box shadow -->
+              <ellipse cx="45" cy="77" rx="18" ry="4" fill="#1a237e" opacity="0.10"/>
+              <defs>
+                <linearGradient id="boxGrad" x1="20" y1="55" x2="70" y2="75" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00b8ff"/>
+                  <stop offset="1" stop-color="#c6ff00"/>
+                </linearGradient>
+                <linearGradient id="flapGrad" x1="20" y1="55" x2="70" y2="55" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#e3e6ee"/>
+                  <stop offset="1" stop-color="#b2ebf2"/>
+                </linearGradient>
+                <linearGradient id="rocketGrad" x1="41" y1="25" x2="49" y2="47" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#fff"/>
+                  <stop offset="1" stop-color="#00bfae"/>
+                </linearGradient>
+                <linearGradient id="flameGrad" x1="45" y1="47" x2="45" y2="55" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#ffea00"/>
+                  <stop offset="1" stop-color="#ff6f00"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="know-what-floating know-what-bottom-right">I do</div>
+    </section>
+    <section id="projects" class="section projects-section">
+      <div class="projects-content">
+        <h2>My Work</h2>
+        <div class="scroll-instruction" style="text-align:center;margin-bottom:1.2rem;font-size:1.1rem;font-weight:500;letter-spacing:0.01em;display:flex;align-items:center;justify-content:center;gap:1.1rem;">
+          <span style="display:inline-flex;align-items:center;">
+            <svg width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+              <rect x="2" y="2" width="28" height="44" rx="14" fill="#fff" stroke="#7f53ac" stroke-width="2"/>
+              <rect x="13" y="10" width="6" height="10" rx="3" fill="#7f53ac">
+                <animate attributeName="y" values="10;18;10" dur="1.2s" repeatCount="indefinite"/>
+              </rect>
+              <polygon points="16,40 12,36 20,36" fill="#7f53ac">
+                <animate attributeName="points" values="16,40 12,36 20,36; 16,44 12,40 20,40; 16,40 12,36 20,36" dur="1.2s" repeatCount="indefinite"/>
+              </polygon>
+            </svg>
+          </span>
+          <span class="scroll-animate">Scroll over the projects to explore</span>
+          </div>
+        <div class="project-window" id="project-window" style="position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="project-slide-container" id="project-slide-container" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;">
+            <div class="project-title-overlay" id="project-title-bg" style="position:absolute;top:2.2rem;left:calc(5vw + 0.5rem);z-index:1;font-size:5.2rem;font-weight:900;line-height:1.1;letter-spacing:-0.04em;background:linear-gradient(90deg,#c6ff00,#00bfae,#647dee,#7f53ac);-webkit-background-clip:text;-webkit-text-fill-color:transparent;width:90vw;max-width:900px;overflow:hidden;white-space:nowrap;text-overflow:clip;pointer-events:none;user-select:none;text-align:left;text-shadow:0 2px 16px #fff2,0 4px 32px #7f53ac44;">Portfolio OS</div>
+            <img id="project-image" src="https://placehold.co/340x200/png?text=Portfolio+OS" alt="Project image" class="project-image" style="width:50vw;max-width:50vw;height:60vh;object-fit:cover;display:block;margin:0 auto 0 auto;border-radius:0;box-shadow:0 4px 32px 0 rgba(26,35,126,0.13);position:absolute;z-index:2;left:25vw;top:6.2rem;" />
+            <div style="display:flex;justify-content:center;margin-top:calc(60vh + 7.2rem);width:100vw;position:relative;z-index:3;">
+              <a href="#" class="project-link" id="project-link" style="padding:0.7rem 2.2rem;font-size:1.1rem;border-radius:0.7rem;background:linear-gradient(90deg,#7f53ac,#647dee);color:#fff;font-weight:600;box-shadow:0 2px 8px 0 rgba(26,35,126,0.10);text-align:center;">View Project</a>
+            </div>
+          </div>
+        </div>
+        <!-- Remove the project-nav div with prev/next buttons -->
+      </div>
+    </section>
+    <section id="contact" class="section contact-section" style="position:relative;width:70vw;max-width:900px;margin:0 auto;">
+      <div class="contact-floating-label-left" style="position:absolute;top:10rem;left:0.5rem;font-size:4.2rem;font-weight:900;letter-spacing:-0.03em;z-index:2;line-height:1.05;">
+        <span style="
+          display:inline-block;
+          background: linear-gradient(90deg,#7f53ac 0%,#647dee 40%,#00bfae 70%,#c6ff00 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          background-size: 200% 100%;
+          background-position: left;
+          mask-image: linear-gradient(to right,rgba(0,0,0,1) 80%,rgba(0,0,0,0));
+          -webkit-mask-image: linear-gradient(to right,rgba(0,0,0,1) 80%,rgba(0,0,0,0));
+          border-bottom: 0.18em solid;
+          border-image: linear-gradient(90deg,#7f53ac,#647dee,#00bfae,#c6ff00) 1;
+        ">let’s get</span>
+          </div>
+      <div class="contact-content" style="padding-top:0;">
+        <form class="contact-form" autocomplete="off" action="https://formspree.io/f/mdkdowav" method="POST" style="margin-bottom:3.5rem;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1.2rem;align-items:stretch;width:60vw;max-width:700px;margin-left:0.5rem;">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <div style="display:flex;flex-direction:column;gap:1.2rem;grid-column:1;grid-row:1/3;margin-right:1.5rem;height:100%;">
+            <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:1rem;font-size:1.1rem;border-radius:0.6rem;border:1.5px solid #d1d5db;height:calc(50% - 0.6rem);box-sizing:border-box;" />
+            <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:1rem;font-size:1.1rem;border-radius:0.6rem;border:1.5px solid #d1d5db;height:calc(50% - 0.6rem);box-sizing:border-box;" />
+          </div>
+          <div style="grid-column:2;grid-row:1/3;height:100%;display:flex;flex-direction:column;">
+            <textarea name="message" placeholder="Your Message" required style="width:100%;height:100%;min-height:100px;resize:vertical;padding:1rem;font-size:1.1rem;border-radius:0.6rem;border:1.5px solid #d1d5db;box-sizing:border-box;"></textarea>
+          </div>
+          <button type="submit" class="contact-submit" style="grid-column:1/3;width:100%;display:flex;justify-content:center;align-items:center;padding:1.1rem 0;font-size:1.15rem;border-radius:0.7rem;background:linear-gradient(90deg,#7f53ac,#647dee);color:#fff;font-weight:600;box-shadow:0 2px 8px 0 rgba(26,35,126,0.10);margin-top:0.7rem;">Send Message <i class="ri-send-plane-2-line"></i></button>
+        </form>
+        <!-- Optionally, add a thank you message here after submission -->
+      </div>
+      <div style="width:70vw;max-width:900px;margin:2.2rem auto 0 auto;text-align:left;font-size:1.35rem;font-weight:700;letter-spacing:-0.01em;color:#7f53ac;display:block;">My social media</div>
+      <div style="width:70vw;max-width:900px;margin:1.1rem auto 0 auto;display:flex;flex-direction:row;gap:2.2rem;align-items:center;">
+        <a href="https://www.linkedin.com/in/mogamat-wakeel-jones-3b0036157/" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#0077b5;font-size:2.2rem;display:inline-flex;align-items:center;text-decoration:none;">
+          <i class="ri-linkedin-box-fill"></i>
+        </a>
+        <a href="mailto:wakeeljones29@gmail.com" aria-label="Email" style="color:#7f53ac;font-size:2.2rem;display:inline-flex;align-items:center;text-decoration:none;">
+          <i class="ri-mail-fill"></i>
+        </a>
+        <a href="https://github.com/WakeelJones" target="_blank" rel="noopener" aria-label="GitHub" style="color:#333;font-size:2.2rem;display:inline-flex;align-items:center;text-decoration:none;">
+          <i class="ri-github-fill"></i>
+        </a>
+      </div>
+        
+          <div class="contact-floating-label-right" style="position:absolute;right:0;bottom:20rem;font-size:4.2rem;font-weight:900;letter-spacing:-0.03em;z-index:10;line-height:1.05;text-align:right;">
+            <span style="
+              display:inline-block;
+              background: linear-gradient(90deg,#7f53ac 0%,#647dee 40%,#00bfae 70%,#c6ff00 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              text-fill-color: transparent;
+              background-size: 200% 100%;
+              background-position: left;
+              mask-image: linear-gradient(to right,rgba(0,0,0,1) 80%,rgba(0,0,0,0));
+              -webkit-mask-image: linear-gradient(to right,rgba(0,0,0,1) 80%,rgba(0,0,0,0));
+              border-bottom: 0.18em solid;
+              border-image: linear-gradient(90deg,#7f53ac,#647dee,#00bfae,#c6ff00) 1;
+            ">connected</span>
+          </div>
+        
+    </section>
+    <footer class="main-footer" style="width:100vw;background:linear-gradient(90deg,#7f53ac,#647dee,#00bfae,#c6ff00);color:#fff;padding:1.5rem 0 1.2rem 0;position:relative;bottom:0;left:0;z-index:100;text-align:center;font-size:1.08rem;font-weight:600;letter-spacing:0.01em;box-shadow:0 -2px 16px 0 rgba(26,35,126,0.10);margin-top:auto;">
+      <div class="footer-content">&copy; <span id="copyright-year"></span> Wakeel Jones. All rights reserved.</div>
+    </footer>
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <script>
+      if (typeof window !== 'undefined') {
+        console.log('DEBUG: Custom cursor/gradient script running');
+        const cursor = document.getElementById('custom-cursor') as HTMLElement | null;
+        const gradientSpot = document.querySelector('.hero-gradient-spot') as HTMLElement | null;
+        if (cursor) {
+          cursor.style.opacity = '1';
+          cursor.style.display = 'block';
+          cursor.style.background = 'rgba(255,0,0,0.5)'; // DEBUG: Make cursor red for visibility
+          console.log('DEBUG: custom-cursor element found and forced visible');
+        } else {
+          console.warn('DEBUG: custom-cursor element NOT found');
+        }
+        if (gradientSpot) {
+          gradientSpot.style.opacity = '1';
+          gradientSpot.style.display = 'block';
+          gradientSpot.style.background = 'radial-gradient(circle at center, #00ff00 0%, #fff0 80%)'; // DEBUG: Make spot green
+          gradientSpot.style.width = '340px';
+          gradientSpot.style.height = '340px';
+          gradientSpot.style.zIndex = '10000';
+          console.log('DEBUG: hero-gradient-spot element found and forced visible');
+        } else {
+          console.warn('DEBUG: hero-gradient-spot element NOT found');
+        }
+        const copyrightYear = document.getElementById('copyright-year');
+        if (copyrightYear) copyrightYear.textContent = new Date().getFullYear().toString();
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('nav-hamburger');
+        const dropdown = document.getElementById('nav-dropdown');
+        const mainNav = document.querySelector('.main-nav');
+        hamburger?.addEventListener('click', () => {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', (!expanded).toString());
+          dropdown?.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+          dropdown?.classList.toggle('open', !expanded);
+        });
+        const navClose = document.getElementById('nav-close');
+        navClose?.addEventListener('click', () => {
+          hamburger?.setAttribute('aria-expanded', 'false');
+          dropdown?.setAttribute('aria-hidden', 'true');
+          dropdown?.classList.remove('open');
+        });
+        // Nav background on scroll
+        function navScrollBg() {
+          if (window.scrollY > 10) mainNav?.classList.add('scrolled');
+          else mainNav?.classList.remove('scrolled');
+        }
+        window.addEventListener('scroll', navScrollBg);
+        navScrollBg();
+        // Smooth scroll and active nav
+        document.documentElement.style.scrollBehavior = 'smooth';
+        const navLinks = document.querySelectorAll('.nav-dropdown a, .nav-contact');
+        const sections = Array.from(document.querySelectorAll('.section'));
+        function onScroll() {
+          let scrollPos = window.scrollY + 120;
+          let current = sections[0];
+          for (const section of sections) {
+            if ((section as HTMLElement).offsetTop <= scrollPos) current = section;
+          }
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${current.id}`);
+          });
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+        // Custom cursor
+        document.addEventListener('mousemove', e => {
+          if (cursor) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+          }
+        });
+        const hoverables = document.querySelectorAll('a, button, .service-card, .project-card, .nav-hamburger, .nav-close');
+        hoverables.forEach(el => {
+          el.addEventListener('mouseenter', () => cursor?.classList.add('cursor-hover'));
+          el.addEventListener('mouseleave', () => cursor?.classList.remove('cursor-hover'));
+          el.addEventListener('focus', () => cursor?.classList.add('cursor-hover'));
+          el.addEventListener('blur', () => cursor?.classList.remove('cursor-hover'));
+        });
+        // Gradient spot effect for hero section and top of about section
+        const heroSection = document.querySelector('.hero-section') as HTMLElement | null;
+        const aboutSection = document.querySelector('.about-section') as HTMLElement | null;
+        const gradientSpotElement = document.querySelector('.hero-gradient-spot') as HTMLElement | null;
+        function moveGradientSpot(e: MouseEvent, container: HTMLElement) {
+          if (!gradientSpotElement) return;
+          const rect = container.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          gradientSpotElement.style.left = `${x}px`;
+          gradientSpotElement.style.top = `${y}px`;
+          gradientSpotElement.style.opacity = '1';
+        }
+        if (heroSection && gradientSpotElement) {
+          heroSection.addEventListener('mousemove', (e) => moveGradientSpot(e as MouseEvent, heroSection));
+          heroSection.addEventListener('mouseleave', () => {
+            if (gradientSpotElement) gradientSpotElement.style.opacity = '0';
+          });
+        }
+        if (aboutSection && gradientSpotElement) {
+          aboutSection.addEventListener('mousemove', (e) => {
+            if (!gradientSpotElement) return;
+            const rect = aboutSection.getBoundingClientRect();
+            const y = (e as MouseEvent).clientY - rect.top;
+            // Only show gradient in top 20% of about section
+            if (y < rect.height * 0.2) {
+              moveGradientSpot(e as MouseEvent, aboutSection);
+            } else {
+              gradientSpotElement.style.opacity = '0';
+            }
+          });
+          aboutSection.addEventListener('mouseleave', () => {
+            if (gradientSpotElement) gradientSpotElement.style.opacity = '0';
+          });
+        }
+        // Custom progress scrollbar from about section downwards
+        const progressBar = document.querySelector('.site-scrollbar-progress') as HTMLElement | null;
+        const progressBarInner = document.querySelector('.site-scrollbar-progress-inner') as HTMLElement | null;
+        // Use the already declared aboutSection for both gradient and progress bar logic
+        const endSection = document.querySelector('footer') || document.body;
+        let shimmerTimeout: number | undefined;
+        function setShimmerActive(active: boolean) {
+          if (!progressBar) return;
+          if (active) {
+            progressBar.classList.add('shimmer-active');
+          } else {
+            progressBar.classList.remove('shimmer-active');
+          }
+        }
+        function updateProgressBar() {
+          if (!progressBar || !progressBarInner || !aboutSection) return;
+          const scrollY = window.scrollY;
+          const aboutTop = aboutSection.offsetTop;
+          const endBottom = document.body.scrollHeight;
+          const windowHeight = window.innerHeight;
+          const scrollStart = aboutTop;
+          const scrollEnd = endBottom - windowHeight;
+          if (scrollY < scrollStart) {
+            progressBarInner.style.height = '0%';
+            progressBar.style.opacity = '0';
+          } else {
+            progressBar.style.opacity = '1';
+            const percent = Math.max(0, Math.min(100, ((scrollY - scrollStart) / (scrollEnd - scrollStart)) * 100));
+            progressBarInner.style.height = percent + '%';
+          }
+        }
+        function onScrollWithShimmer() {
+          setShimmerActive(true);
+          updateProgressBar();
+          if (shimmerTimeout) window.clearTimeout(shimmerTimeout);
+          shimmerTimeout = window.setTimeout(() => setShimmerActive(false), 200);
+        }
+        window.addEventListener('scroll', onScrollWithShimmer);
+        window.addEventListener('resize', updateProgressBar);
+        updateProgressBar();
+        // Animated SVG handwriting effect for Wakeel Jones
+        document.addEventListener('DOMContentLoaded', function() {
+          const wjText = document.getElementById('wj-animated');
+          if (wjText && wjText instanceof SVGTextElement) {
+            const length = wjText.getComputedTextLength();
+            wjText.setAttribute('stroke-dasharray', length.toString());
+            wjText.setAttribute('stroke-dashoffset', length.toString());
+            wjText.style.animation = 'wjDraw 2.5s cubic-bezier(.77,0,.18,1) forwards';
+          }
+        });
+        // Project window scroll logic
+        const projects = [
+          {
+            icon: '<i class="ri-apps-2-line"></i>',
+            title: 'Portfolio OS',
+            link: 'https://wakeeljones@netlify.app',
+            image: '/assets/Portfolio.png',
+            bg: 'linear-gradient(120deg, var(--accent), var(--accent-innovate), var(--bg-gradient))'
+          },
+          {
+            icon: '<i class="ri-store-2-line"></i>',
+            title: 'SideHustle ZA',
+            link: 'https://sidehustleza.netlify.app',
+            image: '/assets/SideHustleZA.png',
+            bg: 'linear-gradient(120deg, var(--accent-innovate), var(--accent-lime), var(--bg-gradient))'
+          },
+          {
+            icon: '<i class="ri-chat-3-line"></i>',
+            title: 'ChatPulse',
+            link: 'https://aetherchat.netlify.app',
+            image: '/assets/ChatPulse.png',
+            bg: 'linear-gradient(120deg, var(--accent-teal), var(--accent), var(--bg-gradient))'
+          }
+        ];
+        let projectIndex = 0;
+        let isAnimating = false;
+        function updateProjectWindow() {
+          const titleEl = document.querySelector('#project-title');
+          const linkEl = document.querySelector('#project-link');
+          const iconEl = document.querySelector('.project-header i');
+          const imageEl = document.getElementById('project-image');
+          const titleBgEl = document.getElementById('project-title-bg');
+          if (titleEl) titleEl.textContent = projects[projectIndex].title;
+          if (linkEl) linkEl.setAttribute('href', projects[projectIndex].link);
+          if (iconEl) {
+            const match = projects[projectIndex].icon.match(/ri-[^\s\"]+/);
+            if (match) iconEl.className = match[0];
+          }
+          if (imageEl) imageEl.setAttribute('src', projects[projectIndex].image);
+          if (titleBgEl) titleBgEl.textContent = projects[projectIndex].title;
+          // Change background color of projects section
+          const projectsSection = document.querySelector('.projects-section');
+          if (projectsSection && projectsSection instanceof HTMLElement) {
+            projectsSection.style.transition = 'background 0.7s cubic-bezier(.77,0,.18,1)';
+            projectsSection.style.background = projects[projectIndex].bg;
+          }
+        }
+        // Mouse wheel scroll for project navigation with vertical slide animation
+        const projectWindow = document.getElementById('project-window');
+        const projectSlideContainer = document.getElementById('project-slide-container');
+        if (projectWindow && projectSlideContainer) {
+          projectWindow.addEventListener('wheel', (e) => {
+            if (isAnimating) return;
+            // Scroll forward (down) - next project
+            if ((e.deltaY > 0 || e.deltaX > 0) && projectIndex < projects.length - 1) {
+              e.preventDefault();
+              isAnimating = true;
+              projectSlideContainer.classList.remove('slide-reset', 'slide-down');
+              projectSlideContainer.classList.add('slide-up');
+              setTimeout(() => {
+                projectIndex = (projectIndex + 1);
+                updateProjectWindow();
+                projectSlideContainer.classList.remove('slide-up');
+                projectSlideContainer.classList.add('slide-down');
+                setTimeout(() => {
+                  projectSlideContainer.classList.remove('slide-down');
+                  projectSlideContainer.classList.add('slide-reset');
+                  isAnimating = false;
+                }, 600);
+              }, 600);
+            }
+            // Scroll backward (up) - previous project
+            else if ((e.deltaY < 0 || e.deltaX < 0)) {
+              if (projectIndex > 0) {
+                e.preventDefault();
+                isAnimating = true;
+                projectSlideContainer.classList.remove('slide-reset', 'slide-up');
+                projectSlideContainer.classList.add('slide-down');
+                setTimeout(() => {
+                  projectIndex = (projectIndex - 1);
+                  updateProjectWindow();
+                  projectSlideContainer.classList.remove('slide-down');
+                  projectSlideContainer.classList.add('slide-up');
+                  setTimeout(() => {
+                    projectSlideContainer.classList.remove('slide-up');
+                    projectSlideContainer.classList.add('slide-reset');
+                    isAnimating = false;
+                  }, 600);
+                }, 600);
+              }
+              // If already at first project, do not preventDefault so the page scrolls up
+            }
+          }, { passive: false });
+          // Set initial state
+          projectSlideContainer.classList.add('slide-reset');
+        }
+        updateProjectWindow();
+      }
+    </script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" style="display:flex;"><i class="ri-arrow-up-line"></i></button>
+    <script>
+      // Back to Top Button Logic
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        let isScrollingToTop = false;
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > window.innerHeight * 0.5) {
+            backToTopBtn.style.display = 'flex';
+            backToTopBtn.style.opacity = '0.92';
+          } else if (!isScrollingToTop) {
+            backToTopBtn.style.opacity = '0';
+            setTimeout(() => { backToTopBtn.style.display = 'none'; }, 200);
+          }
+          if (window.scrollY === 0) isScrollingToTop = false;
+        });
+        backToTopBtn.addEventListener('click', () => {
+          isScrollingToTop = true;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          setTimeout(() => {
+            // Fallback: if still not at top, jump instantly
+            if (window.scrollY !== 0) {
+              window.scrollTo(0, 0);
+              console.log('Fallback: Instantly scrolled to top');
+            }
+            isScrollingToTop = false;
+          }, 1200);
+        });
+      }
+    </script>
+    <!-- Custom Scrollbar Progress Bar Script -->
+    <script>
+      function updateCustomScrollbar() {
+        const progress = document.querySelector('.site-scrollbar-progress-inner');
+        if (!progress) return;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (progress instanceof HTMLElement) progress.style.height = percent + '%';
+      }
+      window.addEventListener('scroll', updateCustomScrollbar);
+      window.addEventListener('resize', updateCustomScrollbar);
+      document.addEventListener('DOMContentLoaded', updateCustomScrollbar);
+    </script>
+  </body>
+</html>
